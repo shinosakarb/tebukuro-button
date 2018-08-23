@@ -20,3 +20,6 @@ class Form extends React.Component {
     );
   }
 }
+
+const domContainer = document.querySelector('#form_container');
+ReactDOM.render(e(Form), domContainer);

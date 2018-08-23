@@ -3,9 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>GitHub Pages For embedding form</title>
-  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-  <script src="./Form.js"></script>
 </head>
 
 <body>
@@ -13,11 +10,15 @@
     <h1>Hello world GitHub Pages</h1>
     <p>React element is rendrerd below...</p>
     <div id="form_container"></div>
-    <script>
-      const domContainer = document.querySelector('#form_container');
-      ReactDOM.render(e(Form), domContainer);
-    </script>
-
   </main>
+
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="./Form.js"></script>
+  <script>
+    const domContainer = document.querySelector('#form_container');
+    ReactDOM.render(e(Form), domContainer);
+  </script>
+
 </body>
 </html>

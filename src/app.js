@@ -1,5 +1,8 @@
 import Form from './Form'
-const e = React.createElement;
+import React from 'react'
+import { render } from 'react-dom'
 
-const domContainer = document.querySelector('#form_container');
-ReactDOM.render(e(Form), domContainer);
+const e = React.createElement
+const domContainer = document.querySelector('#form_container')
+
+render(e(Form), domContainer)

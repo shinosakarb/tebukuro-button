@@ -1,0 +1,20 @@
+{
+  "name": "gh-embed-form",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ytorii/gh-embed-form.git",
+  "author": "ytorii <metalwarrior_type_jp@hotmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  }
+}

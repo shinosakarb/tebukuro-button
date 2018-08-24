@@ -346,7 +346,7 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Form; });\n\n\nconst e = React.createElement;\n\nclass Form extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = { registerd: false };\n  }\n\n  render() {\n    if (this.state.registered == true) {\n      return 'It is the 1st event!';\n    }\n\n    return e(\n      'button',\n      { onClick: () => this.setState({ registered: true }) },\n      'register'\n    );\n  }\n}\n\n\n//# sourceURL=webpack:///./src/Form.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Form; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nconst e = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;\n\nclass Form extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {\n  constructor(props) {\n    super(props);\n    this.state = { registerd: false };\n  }\n\n  render() {\n    if (this.state.registered == true) {\n      return 'It is the 1st event!';\n    }\n\n    return e(\n      'button',\n      { onClick: () => this.setState({ registered: true }) },\n      'register'\n    );\n  }\n}\n\n\n//# sourceURL=webpack:///./src/Form.js?");
 
 /***/ }),
 

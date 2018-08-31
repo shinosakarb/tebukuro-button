@@ -1,6 +1,5 @@
 import React from 'react'
-
-const e = React.createElement;
+import fetch from 'isomorphic-fetch'
 
 export default class Form extends React.Component {
   constructor(props) {
@@ -8,15 +7,22 @@ export default class Form extends React.Component {
     this.state = { registerd: false };
   }
 
+  componentDidMount(){
+    fetch('http://tebukuro-api.shinosakarb.org/events/1')
+      .then( res => {
+        console.log(res.json())
+      })
+  }
+
   render() {
     if (this.state.registered == true) {
-      return 'It is the 1st event!';
+      return 'You are the 1st participant!'
     }
 
-    return e(
+    return React.createElement(
       'button',
       { onClick: () => this.setState({ registered: true }) },
       'register'
-    );
+    )
   }
 }

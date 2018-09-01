@@ -4,7 +4,7 @@ require('babel-core/register');
 
 module.exports = {
   // モードの設定、v4系以降はmodeを指定しないと、webpack実行時に警告が出る
-  mode: 'production',
+  mode: 'development',
   // エントリーポイントの設定
   entry: './src/index.js',
   // 出力の設定

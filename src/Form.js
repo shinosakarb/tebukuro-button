@@ -8,10 +8,9 @@ export default class Form extends React.Component {
   }
 
   componentDidMount(){
-    fetch('http://tebukuro-api.shinosakarb.org/events/1')
-      .then( res => {
-        console.log(res.json())
-      })
+    fetch(
+      'http://tebukuro-api.shinosakarb.org/events/1'
+    ).then( response => console.log(response))
   }
 
   render() {

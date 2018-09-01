@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Modal from 'react-modal';
 import Form from './Form'
+import GithubAuthButton from './GithubAuthButton'
 
 const customStyles = {
   content : {
@@ -61,7 +62,7 @@ class App extends Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <Form/>
+          <GithubAuthButton/>
         </Modal>
       </div>
     )

@@ -1,11 +1,8 @@
-// const baseAuthUrl = `${process.env.BASE_URL}auth`
-const baseAuthUrl = 'http://tebukuro-api.shinosakarb.org/auth'
-
-const validateTokenUrl = `${baseAuthUrl}/validate_token`
+const baseUrl = 'http://tebukuro-api.shinosakarb.org'
 
 const openAuthPopup = (provider) => {
   const authQuery = `auth_origin_url=${encodeURIComponent(window.location.href)}`
-  const omniauthUrl = `${baseAuthUrl}/${provider}?${authQuery}`
+  const omniauthUrl = `${baseUrl}/auth/${provider}?${authQuery}`
   const settings = 'scrollbars=no,toolbar=no,location=no,titlebar=no,directories=no,status=no,menubar=no,width=400,height=300'
 
   return window.open(omniauthUrl, provider, settings)
@@ -37,6 +34,7 @@ const checkDidUserAuthenticated = (popup, resolve, reject) => {
   } else if (popup.closed) {
     return reject(new Error('Error has occured in User Authentication with the provider'))
   }
+
   return setTimeout(() => checkDidUserAuthenticated(popup, resolve, reject), 100)
 }
 

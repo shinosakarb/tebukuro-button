@@ -1,10 +1,14 @@
 import React from 'react'
-import fetch from 'isomorphic-fetch'
-import omniAuthSignin from './omniAuthSignin'
+import omniAuthRegistration from './omniAuthRegistration'
+
+const params = {
+  eventId: 6,
+  provider: 'github'
+}
 
 const GithubAuthButton = () => (
-  <button onClick={() => omniAuthSignin({provider: 'github'})} >
-    Githubアカウントでサインイン
+  <button onClick={() => omniAuthRegistration(params)} >
+    Githubアカウントで参加登録
   </button>
 )
 

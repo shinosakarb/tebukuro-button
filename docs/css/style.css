@@ -3,7 +3,6 @@
 ================================================== */
 
 @import url("reset.css");
-@import url("owlcarousel.css");
 @import url("uikit.scrollspy.css");
 
 /* ==================================================
@@ -365,17 +364,6 @@ h1, h2, h3
 	padding: 30px 0;
 }
 
-	#quotecont .owl-theme .owl-controls .owl-page span
-	{
-		background: #CCC;
-	}
-	
-		#quotecont .owl-theme .owl-controls .owl-page.active span,
-		#quotecont .owl-theme .owl-controls.clickable .owl-page:hover span
-		{
-			background: #1ABC9C;
-		}
-
 #footercont
 {
 	position: relative;
@@ -472,8 +460,8 @@ h1, h2, h3
 
 		#topcontainer h1 span
 		{
-			font-size: 70px;
-			line-height: 70px;
+			font-size: 54px;
+			line-height: 54px;
 		}
 	
 	#countdown #countdowncont
@@ -481,39 +469,24 @@ h1, h2, h3
 		max-width: 400px;
 	}
 	
-		#countdown #countdowncont ul#countscript li
-		{
-			width: 50%;
-			padding: 10px 0;
-		}
-		
-			#countdown #countdowncont ul#countscript li span
-			{
-				font-size: 70px;
-				line-height: 70px;
-			}
-			
-	#quotecont
+  	#countdown #countdowncont h1
+  	{
+  		font-size: 45px;
+  	}
+
+#footercont {}
+
+  #footercont #footerleft
 	{
-		padding: 15px 0;
-	}
-		
-	#footercont
-	{
-		font-size: 19px;
-	}
-		
-		#footercont #footerleft
-		{
 			float: none;
 			padding: 30px 0;
 			text-align: center;
-		}
+	}
 		
-			#footercont #socialmedia ul li a
-			{
-				font-size: 32px;
-			}
+		#footercont #socialmedia ul li a
+		{
+			font-size: 32px;
+		}
 		
 		#footercont #footerright
 		{

@@ -23,39 +23,3 @@ $(document).ready(function() {
 		event.preventDefault();
 	});
 });
-
-/** Countdown Timer **/
-
-$(document).ready(function() {
-	"use strict";
-	$("#countdown").countdown({
-		date: "12 june 2015 12:00:00", /** Enter new date here **/
-		format: "on"
-	},
-	function() {
-		// callback function
-	});
-});
-
-/** Owl Carousel **/
-
-$(window).load(function() {
-	"use strict";
-	$("#commentslider").owlCarousel({
-		autoPlay: false, /** for autoplay - change false to 4000 to auto change every 4 seconds (for example) **/
-		autoHeight: true,
-		stopOnHover: true,
-		navigation: false,
-		navigationText: ["prev","next"],
-		pagination: true,
-		paginationNumbers: false,
-		paginationSpeed: 500,
-		goToFirstSpeed: 500,
-		slideSpeed: 500,
-		rewindSpeed: 500,
-		singleItem: true,
-		lazyLoad: false,
-		transitionStyle: "backSlide" /** fade, backSlide, goDown, fadeUp - Remove whole line for slide transition **/
-	});
-});
-

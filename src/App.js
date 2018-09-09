@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Modal from 'react-modal';
-import Form from './Form'
 import GithubAuthButton from './GithubAuthButton'
 
 const customStyles = {
@@ -23,7 +22,7 @@ const customStyles = {
 };
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
-Modal.setAppElement('#form_container')
+Modal.setAppElement('#tebukuro-leash')
 
 class App extends Component {
   constructor() {
@@ -38,13 +37,24 @@ class App extends Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-  openModal() {
-    this.setState({modalIsOpen: true});
+  componentDidMount() {
+    this.eventHandler = this.openModal.bind(this)
+    document.addEventListener('click', this.eventHandler);
+  }
+
+  componentWillUnmount() {
+    this.eventHandler = this.openModal.bind(this)
+    document.removeEventListener('click', this.eventHandler);
+  }
+
+  openModal(e) {
+    const className = e.srcElement.className
+    if(className.includes('tebukuro-button')){
+      this.setState({modalIsOpen: true});
+    }
   }
 
   afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    console.log("Opned!")
   }
 
   closeModal() {
@@ -53,18 +63,15 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <button onClick={this.openModal}>Open Modal</button>
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
-        >
-          <GithubAuthButton/>
-        </Modal>
-      </div>
+      <Modal
+        isOpen={this.state.modalIsOpen}
+        onAfterOpen={this.afterOpenModal}
+        onRequestClose={this.closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <GithubAuthButton/>
+      </Modal>
     )
   }
 }

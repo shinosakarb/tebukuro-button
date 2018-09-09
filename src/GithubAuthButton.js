@@ -7,9 +7,9 @@ const params = {
 }
 
 const GithubAuthButton = () => (
-  <button onClick={() => omniAuthRegistration(params)} >
-    Githubアカウントで参加登録
-  </button>
+  <a onClick={() => omniAuthRegistration(params)} className="btn btn-block btn-social btn-github">
+    <i className="fa fa-github"></i>Sign in with Github
+  </a>
 )
 
 export default GithubAuthButton

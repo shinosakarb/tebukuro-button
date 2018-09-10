@@ -156,7 +156,7 @@ h1, h2, h3
 		border-width: 12px;
 		left: 50%;
 		margin-left: -12px;
-		z-index: 11;
+		z-index: -1;
 	}
 	
 		.arrow-white:after

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Modal from 'react-modal';
-import GithubAuthButton from './GithubAuthButton'
+import GithubAuthForm from './GithubAuthForm'
 
 const customStyles = {
   content : {
@@ -20,6 +20,11 @@ const customStyles = {
     backgroundColor: 'rgba(0, 0, 0, 0.75)'
   },
 };
+
+const params = {
+  eventId: 6,
+  provider: 'github'
+}
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#tebukuro-leash')
@@ -70,7 +75,7 @@ class App extends Component {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <GithubAuthButton/>
+        <GithubAuthForm params={ params }/>
       </Modal>
     )
   }

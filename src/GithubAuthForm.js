@@ -1,8 +1,42 @@
 import React from 'react'
-import GithubAuthButton from './GithubAuthButton'
+import omniAuthRegistration from './omniAuthRegistration'
 
-const GithubAuthForm = props => (
-  <GithubAuthButton params={props.params}/>
+const GithubAuthButton = props => (
+  <a onClick={props.onClick} className="btn btn-block btn-social btn-github">
+    <i className="fa fa-github"></i>Sign in with Github
+  </a>
 )
 
-export default GithubAuthButton
+const RegistrationMessage = props => (
+  <p>{props.message}</p>
+)
+
+class GithubAuthForm extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      message: null
+    }
+
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick() {
+    omniAuthRegistration(this.props.params)
+      .then(result => this.setState({message: result}))
+  }
+
+  render() {
+    return (
+      <div>
+        { this.state.message ?
+          <RegistrationMessage message={this.state.message} />
+          : <GithubAuthButton onClick={this.onClick} />
+        }
+      </div>
+    )
+  }
+}
+
+export default GithubAuthForm

@@ -421,7 +421,7 @@ h1, h2, h3
 					top: 2px;
 				}
 
-        .founder {
+        .staffs {
           text-align: center;
           font-size: 30px;
         }
@@ -429,6 +429,10 @@ h1, h2, h3
         .item {
           display: block;
           text-align: center;
+        }
+
+        .item p{
+          margin: 0px;
         }
 
           .item img:hover {

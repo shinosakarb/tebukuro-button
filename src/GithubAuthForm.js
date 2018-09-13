@@ -7,9 +7,14 @@ const GithubAuthButton = props => (
   </a>
 )
 
-const RegistrationMessage = props => (
-  <p>{props.message}</p>
-)
+const RegistrationMessage = props => {
+  const message = props.message === "success" ?
+    "イベントへの登録が完了しました。" : "登録に失敗しました。"
+
+  return (
+    <p><strong>{message}</strong></p>
+  )
+}
 
 class GithubAuthForm extends React.Component {
   constructor() {

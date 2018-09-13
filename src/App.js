@@ -22,7 +22,7 @@ const customStyles = {
 };
 
 const params = {
-  eventId: 6,
+  eventId: 7,
   provider: 'github'
 }
 

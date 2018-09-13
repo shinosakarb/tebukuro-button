@@ -5,13 +5,13 @@ const registrationUrl = eventId => `${baseUrl}/events/${eventId}/registrations`
 
 const setAuthHeaders = headers => {
   let authHeaders = new Headers()
+
   authHeaders.append('access-token', headers['access-token'])
   authHeaders.append('uid', headers['uid'])
   authHeaders.append('client', headers['client'])
 
   return authHeaders
 }
-
 
 const registerToEvent = (params) => {
   const { eventId, headers } = params
@@ -25,9 +25,10 @@ const registerToEvent = (params) => {
 }
 
 const omniAuthRegistration = (params) => {
-  omniAuthSignin(params)
+  return omniAuthSignin(params)
     .then(headers => registerToEvent({...params, headers}))
-    .then(res => console.log(res))
+    .then(res => 'success')
+    .catch(err => 'error' )
 }
 
 export default omniAuthRegistration

@@ -22,7 +22,6 @@ const customStyles = {
   },
 };
 
-// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#tebukuro-leash')
 
 class App extends Component {

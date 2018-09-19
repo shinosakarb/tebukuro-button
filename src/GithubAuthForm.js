@@ -8,11 +8,12 @@ const GithubAuthButton = props => (
 )
 
 const RegistrationMessage = props => {
-  const message = props.message === "success" ?
-    "イベントへの登録が完了しました。" : "登録に失敗しました。"
-
   return (
-    <p><strong>{message}</strong></p>
+    <div>
+      { props.messages.map(message => (
+        <p><strong>{message}</strong></p>
+      ))}
+    </div>
   )
 }
 
@@ -21,7 +22,7 @@ class GithubAuthForm extends React.Component {
     super()
 
     this.state = {
-      message: null
+      messages: null
     }
 
     this.onClick = this.onClick.bind(this);
@@ -29,14 +30,14 @@ class GithubAuthForm extends React.Component {
 
   onClick() {
     omniAuthRegistration(this.props.params)
-      .then(result => this.setState({message: result}))
+      .then(result => this.setState({messages: result}))
   }
 
   render() {
     return (
       <div>
-        { this.state.message ?
-          <RegistrationMessage message={this.state.message} />
+        { this.state.messages ?
+          <RegistrationMessage messages={this.state.messages} />
           : <GithubAuthButton onClick={this.onClick} />
         }
       </div>

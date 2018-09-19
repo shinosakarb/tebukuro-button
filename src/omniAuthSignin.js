@@ -21,8 +21,7 @@ const checkDidUserAuthenticated = (popup, resolve, reject) => {
   // In order to check authentication in popup window has completed,
   // we need to fetch search queries of popup windows address.
   // But in authenticating in provider's domain, this check causes cors exception
-  // for secutity reason.
-  // To handle this, catch exception and throw away...
+  // for secutity reason. To handle this, catch exception and throw away...
   let authHeaders = {}
   try {
     authHeaders = requestHeadersFromQuery(popup)
@@ -32,7 +31,7 @@ const checkDidUserAuthenticated = (popup, resolve, reject) => {
     popup.close()
     return resolve(authHeaders)
   } else if (popup.closed) {
-    return reject(new Error('Error has occured in User Authentication with the provider'))
+    return reject(new Error())
   }
 
   return setTimeout(() => checkDidUserAuthenticated(popup, resolve, reject), 100)

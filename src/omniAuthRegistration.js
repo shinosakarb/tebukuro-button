@@ -1,34 +1,26 @@
 import omniAuthSignin from './omniAuthSignin'
+import registerToEvent from './registerToEvent'
 
 const baseUrl = 'http://tebukuro-api.shinosakarb.org'
-const registrationUrl = eventId => `${baseUrl}/events/${eventId}/registrations`
 
-const setAuthHeaders = headers => {
-  let authHeaders = new Headers()
+const createErrorMessages = res => (
+  res.then(data => {
+    const errorMessages = []
 
-  authHeaders.append('access-token', headers['access-token'])
-  authHeaders.append('uid', headers['uid'])
-  authHeaders.append('client', headers['client'])
-
-  return authHeaders
-}
-
-const registerToEvent = (params) => {
-  const { eventId, headers } = params
-  const config = {
-    method: 'POST',
-    mode: 'cors',
-    headers: setAuthHeaders(headers)
-  }
-
-  return fetch(registrationUrl(eventId), config)
-}
+    Object.values(data).forEach((messages) => {
+      messages.forEach((message) => {
+        errorMessages.push(message)
+      })
+    })
+    return errorMessages
+  })
+)
 
 const omniAuthRegistration = (params) => {
   return omniAuthSignin(params)
     .then(headers => registerToEvent({...params, headers}))
-    .then(res => 'success')
-    .catch(err => 'error' )
+    .then(res => res.ok ? ['イベントへの登録が完了しました'] : createErrorMessages(res.json()))
+    .catch(err => ['登録処理中にエラーが発生しました'])
 }
 
 export default omniAuthRegistration

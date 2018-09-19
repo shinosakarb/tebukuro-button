@@ -2,7 +2,7 @@ import React from 'react'
 import omniAuthRegistration from './omniAuthRegistration'
 
 const GithubAuthButton = props => (
-  <a onClick={props.onClick} className="btn btn-block btn-social btn-github">
+  <a onClick={props.onClick}>
     <i className="fa fa-github"></i>Sign in with Github
   </a>
 )

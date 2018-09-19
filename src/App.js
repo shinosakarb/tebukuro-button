@@ -22,11 +22,6 @@ const customStyles = {
   },
 };
 
-const params = {
-  eventId: 7,
-  provider: 'github'
-}
-
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#tebukuro-leash')
 
@@ -39,7 +34,6 @@ class App extends Component {
     }
 
     this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
@@ -60,21 +54,22 @@ class App extends Component {
     }
   }
 
-  afterOpenModal() {
-  }
-
   closeModal() {
     this.setState({modalIsOpen: false});
   }
 
   render() {
+    const params = {
+      eventId: this.props.eventId,
+      provider: 'github'
+    }
+
     return (
       <Modal
         isOpen={this.state.modalIsOpen}
-        onAfterOpen={this.afterOpenModal}
         onRequestClose={this.closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
+        contentLabel="Tebukuro Registration Modal"
       >
         <GithubAuthForm params={ params }/>
       </Modal>

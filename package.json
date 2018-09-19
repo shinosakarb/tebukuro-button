@@ -10,8 +10,8 @@
     "webpack-cli": "^3.1.0"
   },
   "scripts": {
-    "build:js": "webpack",
-    "deploy:js": "yarn build:js && netlify deploy -p js_dist/"
+    "build": "webpack",
+    "deploy": "yarn build && netlify deploy -p js_dist/"
   },
   "dependencies": {
     "babel-core": "^6.26.3",

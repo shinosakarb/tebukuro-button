@@ -1,4 +1,4 @@
-const baseUrl = 'http://tebukuro-api.shinosakarb.org'
+const baseUrl = 'https://tebukuro-api.shinosakarb.org'
 const registrationUrl = eventId => `${baseUrl}/events/${eventId}/registrations`
 
 const setAuthHeaders = headers => {

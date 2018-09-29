@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Modal from 'react-modal';
+import EventInfo from './EventInfo'
 import GithubAuthForm from './GithubAuthForm'
 
 const customStyles = {
@@ -58,11 +59,6 @@ class App extends Component {
   }
 
   render() {
-    const params = {
-      eventId: this.props.eventId,
-      provider: 'github'
-    }
-
     return (
       <Modal
         isOpen={this.state.modalIsOpen}
@@ -70,7 +66,9 @@ class App extends Component {
         style={customStyles}
         contentLabel="Tebukuro Registration Modal"
       >
-        <GithubAuthForm params={ params }/>
+        <EventInfo eventId={ this.props.eventId }/>
+        <GithubAuthForm eventId={ this.props.eventId }/>
+
       </Modal>
     )
   }

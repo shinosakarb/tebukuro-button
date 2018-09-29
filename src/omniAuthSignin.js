@@ -1,4 +1,4 @@
-const baseUrl = 'http://tebukuro-api.shinosakarb.org'
+const baseUrl = 'https://tebukuro-api.shinosakarb.org'
 
 const openAuthPopup = (provider) => {
   const authQuery = `auth_origin_url=${encodeURIComponent(window.location.href)}`

@@ -1,7 +1,7 @@
 import omniAuthSignin from './omniAuthSignin'
 import registerToEvent from './registerToEvent'
 
-const baseUrl = 'http://tebukuro-api.shinosakarb.org'
+const baseUrl = 'https://tebukuro-api.shinosakarb.org'
 
 const createErrorMessages = res => (
   res.then(data => {

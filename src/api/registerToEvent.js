@@ -1,5 +1,5 @@
 import Urls from '../constants/urls'
-import omniAuthSignin from './omniAuthSignin'
+import omniAuthSignin from '../utils/omniAuthSignin'
 
 const registrationUrl = eventId => `${Urls.events}/${eventId}/registrations`
 
@@ -13,7 +13,14 @@ const setAuthHeaders = headers => {
   return authHeaders
 }
 
-const createErrorMessages = res => (
+const successMessage = res => (
+  res.then(data => (
+    data.user_participation.on_waiting_list ?
+      ['キャンセル待ちに登録しました'] : ['参加登録が完了しました']
+  ))
+)
+
+const errorMessages = res => (
   res.then(data => {
     const errorMessages = []
 
@@ -22,6 +29,7 @@ const createErrorMessages = res => (
         errorMessages.push(message)
       })
     })
+
     return errorMessages
   })
 )
@@ -40,7 +48,9 @@ const omniAuthRegistration = (params) => {
 const registerToEvent = (params) => {
   return omniAuthSignin(params)
     .then(headers => omniAuthRegistration({...params, headers}))
-    .then(res => res.ok ? ['イベントへの登録が完了しました'] : createErrorMessages(res.json()))
+    .then(res => {
+      return res.ok ? successMessage(res.json()) : errorMessages(res.json())
+    })
     .catch(err => ['登録処理中にエラーが発生しました'])
 }
 

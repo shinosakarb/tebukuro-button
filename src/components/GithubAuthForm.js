@@ -7,15 +7,13 @@ const GithubAuthButton = props => (
   </a>
 )
 
-const RegistrationMessage = props => {
-  return (
-    <div>
-      { props.messages.map(message => (
-        <p><strong>{message}</strong></p>
-      ))}
-    </div>
-  )
-}
+const RegistrationMessage = props => (
+  <div>
+    { props.messages.map(message => (
+      <p><strong>{message}</strong></p>
+    ))}
+  </div>
+)
 
 class GithubAuthForm extends React.Component {
   constructor() {

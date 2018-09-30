@@ -3,7 +3,7 @@ import Urls from '../constants/urls'
 const openAuthPopup = (provider) => {
   const authQuery = `auth_origin_url=${encodeURIComponent(window.location.href)}`
   const omniauthUrl = `${Urls.auth}/${provider}?${authQuery}`
-  const settings = 'width=400,height=600'
+  const settings = 'width=400,height=400'
 
   return window.open(omniauthUrl, provider, settings)
 }

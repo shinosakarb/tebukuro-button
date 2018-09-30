@@ -24,9 +24,6 @@ class EventInfo extends React.Component {
     return (
       <div>
         <div>
-          申し込みフォーム
-        </div>
-        <div>
           <i className="fa fa-clipboard"></i>
           <span>{event.name}</span>
         </div>

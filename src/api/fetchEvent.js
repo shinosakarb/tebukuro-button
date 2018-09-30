@@ -1,5 +1,6 @@
-const baseUrl = 'https://tebukuro-api.shinosakarb.org'
-const eventUrl = eventId => `${baseUrl}/events/${eventId}`
+import Urls from '../constants/urls'
+
+const eventUrl = eventId => `${Urls.events}/${eventId}`
 
 const config = {
   method: 'GET',

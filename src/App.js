@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Modal from 'react-modal';
-import EventInfo from './EventInfo'
-import GithubAuthForm from './GithubAuthForm'
+import EventInfo from './components/EventInfo'
+import GithubAuthForm from './components/GithubAuthForm'
 
 const customStyles = {
   content : {

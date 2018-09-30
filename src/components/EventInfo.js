@@ -1,5 +1,5 @@
 import React from 'react'
-import fetchEvent from './fetchEvent'
+import fetchEvent from '../api/fetchEvent'
 
 const toLocale = dateString => (
   new Date(dateString).toLocaleString()

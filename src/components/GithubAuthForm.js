@@ -1,5 +1,5 @@
 import React from 'react'
-import omniAuthRegistration from './omniAuthRegistration'
+import registerToEvent from '../api/registerToEvent'
 
 const GithubAuthButton = props => (
   <a onClick={props.onClick} className="github-button">
@@ -34,8 +34,8 @@ class GithubAuthForm extends React.Component {
       eventId: this.props.eventId
     }
 
-    omniAuthRegistration(params)
-      .then(result => this.setState({messages: result}))
+    registerToEvent(params)
+      .then(messages => this.setState({messages: messages}))
   }
 
   render() {

@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "webpack",
-    "deploy": "yarn build && netlify deploy -p js_dist/"
+    "deploy": "yarn build && netlify deploy -p dist/"
   },
   "dependencies": {
     "babel-core": "^6.26.3",

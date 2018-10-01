@@ -20,7 +20,7 @@ const omniAuthRegistration = (params) => {
     headers: setAuthHeaders(headers)
   }
 
-  return fetch(registrationUrl(eventId), config)
+  return fetch(registrationUrl, config)
 }
 
 const successMessage = res => (

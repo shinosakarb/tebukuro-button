@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Modal from 'react-modal';
+import ThumbUp from '-!react-svg-loader!./svg/baseline-thumb_up-24px.svg'
 import EventInfo from './components/EventInfo'
 import GithubAuthForm from './components/GithubAuthForm'
 
@@ -37,21 +38,8 @@ class App extends Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-  componentDidMount() {
-    this.eventHandler = this.openModal.bind(this)
-    document.addEventListener('click', this.eventHandler);
-  }
-
-  componentWillUnmount() {
-    this.eventHandler = this.openModal.bind(this)
-    document.removeEventListener('click', this.eventHandler);
-  }
-
   openModal(e) {
-    const className = e.srcElement.className
-    if(className.includes('tebukuro-button')){
-      this.setState({modalIsOpen: true});
-    }
+    this.setState({modalIsOpen: true});
   }
 
   closeModal() {
@@ -60,16 +48,22 @@ class App extends Component {
 
   render() {
     return (
-      <Modal
-        isOpen={this.state.modalIsOpen}
-        onRequestClose={this.closeModal}
-        style={customStyles}
-        contentLabel="Tebukuro Registration Modal"
-      >
-        <EventInfo eventId={ this.props.eventId }/>
-        <GithubAuthForm eventId={ this.props.eventId }/>
+      <div>
+        <button className="btn red" onClick={this.openModal}>
+          <ThumbUp />
+          <span>Join with Tebukuro</span>
+        </button>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Tebukuro Registration Modal"
+        >
+          <EventInfo eventId={ this.props.eventId }/>
+          <GithubAuthForm eventId={ this.props.eventId }/>
 
-      </Modal>
+        </Modal>
+      </div>
     )
   }
 }

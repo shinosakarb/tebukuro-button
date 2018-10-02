@@ -6,6 +6,7 @@
   "author": "ytorii <metalwarrior_type_jp@hotmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "react-svg-loader": "^2.1.0",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0"
   },

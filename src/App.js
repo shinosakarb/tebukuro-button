@@ -49,9 +49,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <button className="btn red" onClick={this.openModal}>
-          <ThumbUp />
-          <span>Join with Tebukuro</span>
+        <button className="btn" onClick={this.openModal}>
+          <ThumbUp/>
+          <span>Register with <strong>Tebukuro</strong></span>
         </button>
         <Modal
           isOpen={this.state.modalIsOpen}

@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import ThumbUp from '-!react-svg-loader!./svg/baseline-thumb_up-24px.svg'
 import EventInfo from './components/EventInfo'
 import GithubAuthForm from './components/GithubAuthForm'
+import fetchEvent from './api/fetchEvent'
 
 const customStyles = {
   content : {
@@ -31,11 +32,17 @@ class App extends Component {
     super()
 
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      event: {},
     }
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+  }
+
+  componentDidMount() {
+    fetchEvent(this.props.eventId)
+      .then(event => this.setState({event: event}))
   }
 
   openModal(e) {
@@ -59,7 +66,7 @@ class App extends Component {
           style={customStyles}
           contentLabel="Tebukuro Registration Modal"
         >
-          <EventInfo eventId={ this.props.eventId }/>
+          <EventInfo event={ this.state.event }/>
           <GithubAuthForm eventId={ this.props.eventId }/>
 
         </Modal>

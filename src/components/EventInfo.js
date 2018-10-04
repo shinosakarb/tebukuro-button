@@ -1,39 +1,25 @@
 import React from 'react'
-import fetchEvent from '../api/fetchEvent'
+import ListAlt from '-!react-svg-loader!../svg/baseline-list_alt-24px.svg'
+import Alarm from '-!react-svg-loader!../svg/baseline-alarm-24px.svg'
 
 const toLocale = dateString => (
   new Date(dateString).toLocaleString()
 )
 
-class EventInfo extends React.Component {
-  constructor() {
-    super()
-
-    this.state = {
-      event: {}
-    }
-  }
-
-  componentDidMount() {
-    fetchEvent(this.props.eventId)
-      .then(event => this.setState({event: event}))
-  }
-
-  render() {
-    const { event } = this.state
-    return (
+const EventInfo = (props) => {
+  const { event } = props
+  return (
+    <div>
       <div>
-        <div>
-          <i className="fa fa-clipboard"></i>
-          <span>{event.name}</span>
-        </div>
-        <div>
-          <i className="fa fa-clock-o"></i>
-          <span>{toLocale(event.event_starts_at)}</span>
-        </div>
+        <ListAlt/>
+        <span>{event.name}</span>
       </div>
-    )
-  }
+      <div>
+        <Alarm/>
+        <span>{toLocale(event.event_starts_at)}</span>
+      </div>
+    </div>
+  )
 }
 
 export default EventInfo

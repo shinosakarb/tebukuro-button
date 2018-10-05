@@ -1,5 +1,4 @@
 import React from 'react'
-import registerToEvent from '../api/registerToEvent'
 
 const GithubAuthButton = props => (
   <a onClick={props.onClick} className="github-button">
@@ -15,37 +14,23 @@ const RegistrationMessage = props => (
   </div>
 )
 
-class GithubAuthForm extends React.Component {
-  constructor() {
-    super()
-
-    this.state = {
-      messages: null
-    }
-
-    this.onClick = this.onClick.bind(this);
-  }
-
-  onClick() {
+const GithubAuthForm = props => {
+  const onClick = () => {
     const params = {
       provider: 'github',
-      eventId: this.props.eventId
+      eventId: props.eventId
     }
-
-    registerToEvent(params)
-      .then(messages => this.setState({messages: messages}))
+    props.onRegister(params)
   }
 
-  render() {
-    return (
-      <div>
-        { this.state.messages ?
-          <RegistrationMessage messages={this.state.messages} />
-          : <GithubAuthButton onClick={this.onClick} />
-        }
-      </div>
-    )
-  }
+  return (
+    <div>
+      { props.messages ?
+          <RegistrationMessage messages={props.messages} />
+          : <GithubAuthButton onClick={onClick} />
+      }
+    </div>
+  )
 }
 
 export default GithubAuthForm

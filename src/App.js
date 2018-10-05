@@ -4,6 +4,7 @@ import TebukuroButton from './components/TebukuroButton'
 import EventInfo from './components/EventInfo'
 import GithubAuthForm from './components/GithubAuthForm'
 import fetchEvent from './api/fetchEvent'
+import registerToEvent from './api/registerToEvent'
 
 const customStyles = {
   content : {
@@ -34,15 +35,22 @@ class App extends Component {
     this.state = {
       modalIsOpen: false,
       event: {},
+      messages: null,
     }
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.onRegister = this.onRegister.bind(this);
   }
 
   componentDidMount() {
     fetchEvent(this.props.eventId)
       .then(event => this.setState({event: event}))
+  }
+
+  onRegister(params) {
+    registerToEvent(params)
+      .then(messages => this.setState({messages: messages}))
   }
 
   openModal(e) {
@@ -64,7 +72,11 @@ class App extends Component {
           contentLabel="Tebukuro Registration Modal"
         >
           <EventInfo event={ this.state.event }/>
-          <GithubAuthForm eventId={ this.props.eventId }/>
+          <GithubAuthForm
+            eventId={this.props.eventId}
+            messages={ this.state.messages}
+            onRegister={this.onRegister}
+          />
         </Modal>
       </div>
     )

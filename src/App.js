@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Modal from 'react-modal';
-import ThumbUp from '-!react-svg-loader!./svg/baseline-thumb_up-24px.svg'
+import TebukuroButton from './components/TebukuroButton'
 import EventInfo from './components/EventInfo'
 import GithubAuthForm from './components/GithubAuthForm'
 import fetchEvent from './api/fetchEvent'
@@ -56,10 +56,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <button className="btn" onClick={this.openModal}>
-          <ThumbUp/>
-          <span>Register with <strong>Tebukuro</strong></span>
-        </button>
+        <TebukuroButton onClick={this.openModal}/>
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
@@ -68,7 +65,6 @@ class App extends Component {
         >
           <EventInfo event={ this.state.event }/>
           <GithubAuthForm eventId={ this.props.eventId }/>
-
         </Modal>
       </div>
     )

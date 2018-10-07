@@ -1,6 +1,6 @@
 import React from 'react'
-import ListAlt from '-!react-svg-loader!../svg/baseline-list_alt-24px.svg'
-import Alarm from '-!react-svg-loader!../svg/baseline-alarm-24px.svg'
+import ListAlt from '../svg/baseline-list_alt-24px.svg'
+import Alarm from '../svg/baseline-alarm-24px.svg'
 
 const toLocale = dateString => (
   new Date(dateString).toLocaleString()

@@ -2,7 +2,6 @@ const path = require('path');
 require('babel-core/register');
 
 module.exports = {
-  mode: 'production',
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
@@ -17,7 +16,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use:{
+        use: {
           loader: 'babel-loader',
           options: {
             presets: ['env', 'react']
@@ -30,7 +29,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        loader: 'react-svg-loader'
+        use: [ 'babel-loader', 'react-svg-loader' ]
       }
     ]
   },

@@ -13,7 +13,7 @@
   margin-top: 10px;
 }
 
-.btn {
+.tebukuro-button {
   display: inline-block;
   position: relative;
   margin: auto;
@@ -27,20 +27,20 @@
   padding: 9px 18px;
 }
 
-.btn:hover, .btn:focus {
+.tebukuro-button:hover, .tebukuro-button:focus {
   background-color: #c0392b;
 }
 
-.btn > * {
+.tebukuro-button > * {
   position: relative;
 }
 
-.btn span {
+.tebukuro-button span {
   display: inline-block;
   padding-left: 6px;
 }
 
-.btn svg {
+.tebukuro-button svg {
   display: inline-block;
   vertical-align: middle;
   margin-right: 5px;

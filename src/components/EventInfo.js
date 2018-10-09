@@ -6,6 +6,15 @@ const toLocale = dateString => (
   new Date(dateString).toLocaleString()
 )
 
+const RegistrationStatus = ({event}) => {
+  const hasWaitListed = (event.quota - event.participants.length) <= 0
+  return (
+    <div className="regstration-status">
+      { hasWaitListed ? 'キャンセル待ち登録になります' : '参加登録できます' }
+    </div>
+  )
+}
+
 const EventInfo = ({ event }) => (
   <div>
     <div>
@@ -15,6 +24,9 @@ const EventInfo = ({ event }) => (
     <div>
       <Alarm/>
       <span>{toLocale(event.event_starts_at)}</span>
+    </div>
+    <div>
+      <RegistrationStatus event={event} />
     </div>
   </div>
 )

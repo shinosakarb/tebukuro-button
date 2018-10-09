@@ -34,7 +34,10 @@ class App extends Component {
 
     this.state = {
       modalIsOpen: false,
-      event: {},
+      event: {
+        quota: 0,
+        participants: [],
+      },
       messages: null,
     }
 
@@ -63,7 +66,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
         <TebukuroButton onClick={this.openModal}/>
         <Modal
           isOpen={this.state.modalIsOpen}

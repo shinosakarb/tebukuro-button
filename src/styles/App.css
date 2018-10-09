@@ -1,16 +1,5 @@
-.github-button{
-  color: #FFF;
-  border-radius: 7px;
-  display: inline-block;
-  height: 40px;
-  line-height: 40px;
-  width: 250px;
-  text-align: center;
-  vertical-align: middle;
-  background: black;
-  overflow: hidden;
-  text-decoration: none;
-  margin-top: 10px;
+.app {
+  color: dimgray;
 }
 
 .tebukuro-button {
@@ -46,7 +35,28 @@
   margin-right: 5px;
 }
 
-.regstration-status {
+.registration-status-text {
   font-size: 80%;
   text-align: center;
 }
+
+.icon {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.github-button{
+  color: #FFF;
+  border-radius: 7px;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  width: 250px;
+  text-align: center;
+  vertical-align: middle;
+  background: black;
+  overflow: hidden;
+  text-decoration: none;
+  margin-top: 10px;
+}
+

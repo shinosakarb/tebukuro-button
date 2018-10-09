@@ -6,20 +6,17 @@ const toLocale = dateString => (
   new Date(dateString).toLocaleString()
 )
 
-const EventInfo = (props) => {
-  const { event } = props
-  return (
+const EventInfo = ({ event }) => (
+  <div>
     <div>
-      <div>
-        <ListAlt/>
-        <span>{event.name}</span>
-      </div>
-      <div>
-        <Alarm/>
-        <span>{toLocale(event.event_starts_at)}</span>
-      </div>
+      <ListAlt/>
+      <span>{event.name}</span>
     </div>
-  )
-}
+    <div>
+      <Alarm/>
+      <span>{toLocale(event.event_starts_at)}</span>
+    </div>
+  </div>
+)
 
 export default EventInfo

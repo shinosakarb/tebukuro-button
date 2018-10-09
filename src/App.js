@@ -71,7 +71,7 @@ class App extends Component {
           style={customStyles}
           contentLabel="Tebukuro Registration Modal"
         >
-          <EventInfo event={ this.state.event }/>
+          <EventInfo event={this.state.event}/>
           <GithubAuthForm
             eventId={this.props.eventId}
             messages={ this.state.messages}

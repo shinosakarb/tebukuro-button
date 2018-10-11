@@ -1,37 +1,24 @@
-## Welcome to GitHub Pages
+## Tebukuro button
+The English README is available at [README_EN.md](README_EN.md)!
 
-You can use the [editor on GitHub](https://github.com/ytorii/gh-embed-form/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+### What's this? 
+[Tebukuro](https://tebukuro.shinosakarb.org/) で作成したイベントへの参加ボタンを、イベントのランディングページなどに埋め込むスクリプトです。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### How to use
 
-### Markdown
+以下の３ステップでサイトに参加ボタンを埋め込むことができます！
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- [Tebukuro](https://tebukuro.shinosakarb.org/) でイベントを作成
+  - ブラウザのアドレスバーでTebukuro内でのイベントIDを確認してください
 
-```markdown
-Syntax highlighted code block
+- id属性が`tebukuro-leash` の`<div/>` タグ をサイトの好きな場所に追加
+  - `data-event-id` 属性をTebukuro内でのIDに書き換えてください
 
-# Header 1
-## Header 2
-### Header 3
+- 参加ボタンのbundleをダウンロードするための`<script>`タグを、`<body>`タグの最後に追加
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+このボタンの使用例はこちら:
 
-**Bold** and _Italic_ and `Code` text
+- Webサイト: https://neyagawarb.tk
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ytorii/gh-embed-form/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- リポジトリ: https://github.com/shinosakarb/tebukuro-demo
